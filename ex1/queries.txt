@@ -1,0 +1,36 @@
+1:
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?i where { 
+	?i rdf:type owl:Class.    
+}
+
+2:
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?i where { 
+	?i rdf:type owl:ObjectProperty.    
+}
+
+3:
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://rpcw.di.uminho.pt/2024/historia/>
+select ?pessoa where { 
+	?v rdf:type :Vegetal.
+    ?v :Vegetal "Tomate".
+   	?pessoa :criou ?v
+}
+
+4:
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://rpcw.di.uminho.pt/2024/historia/>
+select ?pessoa2 where { 
+	?pessoa1 rdf:type :Pessoa.
+    ?pessoa1 :contratado_por ?pessoa2.
+}
